@@ -179,17 +179,20 @@ public class DeviceOrientationManager {
         angle = 180;
         break;
       case LANDSCAPE_LEFT:
-        angle = 90;
+        angle = 270;
         break;
       case LANDSCAPE_RIGHT:
-        angle = 270;
+        angle = 90;
         break;
     }
 
     if (isFrontFacing) {
       angle *= -1;
     }
-
+    System.out.println("orientation = " + orientation);
+    System.out.println("angle = " + angle);
+    System.out.println("sensorOrientation = " + sensorOrientation);
+    System.out.println("isFrontFacing = " + isFrontFacing);
     return (angle + sensorOrientation + 360) % 360;
   }
 
